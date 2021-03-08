@@ -1,9 +1,3 @@
-#----------------------------------------------------------------
-## Name: Taariq McDonald
-## Student Number: 215465214
-## Course: EECS 3214
-## Assignment 1: Question #3
-#----------------------------------------------------------------
 import socket
 import ssl
 import base64
@@ -67,7 +61,7 @@ def startEmail(receiver, text):
     #---------------------- Successful TLS handshake ----------------------------------
 
     #---------------------- Authentication --------------------------------------------
-    user = ("\x00addamsjosh274@gmail.com\x003214_testdum").encode()
+    user = ("\x00addamsjosh274@gmail.com\x003214_testdum").encode() #test dummy client email account
     user_encode = base64.b64encode(user)
     aCommand = 'AUTH PLAIN '.encode() + user_encode + '\r\n'.encode()
     tlsClientSock.send(aCommand)
