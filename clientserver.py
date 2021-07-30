@@ -38,7 +38,7 @@ def startEmail(receiver, text):
     #------------------------- HELO command successfully sent -------------------------
 
     #---------------------- Request verification of the user --------------------------
-    vCommand = 'VRFY ' + receiver + '\r\n' #########################had taariqmcdonald here instead of receiver previously
+    vCommand = 'VRFY ' + receiver + '\r\n' 
     clientSocket.send(vCommand.encode('utf-8'))
     data3 = clientSocket.recv(4096)
     client = vCommand.split('\r\n')
@@ -82,7 +82,7 @@ def startEmail(receiver, text):
 
     #------------------------ Send the RCPT TO command --------------------------------
     #Indicates who is receiving the email
-    rCommand = 'RCPT TO: <' + receiver + '>\r\n' #########removed the tmmstar99@gmail.com
+    rCommand = 'RCPT TO: <' + receiver + '>\r\n' 
     tlsClientSock.send(rCommand.encode('utf-8'))
     data7 = tlsClientSock.recv(4096)
     client = rCommand.split('\r\n')
